@@ -78,6 +78,9 @@ public class FriendsController {
 	}
 }
 
+//두개의 값은 같음
+//redirect: 를 붙히면 리다일렉트 이동 붙히지 않으면 forward 이동.
+
 
 
 
