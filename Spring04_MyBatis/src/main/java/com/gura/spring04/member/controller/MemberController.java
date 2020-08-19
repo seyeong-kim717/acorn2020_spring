@@ -15,6 +15,7 @@ import com.gura.spring04.member.dto.MemberDto;
 import com.gura.spring04.member.service.MemberService;
 
 @Controller
+//controller를 생성함은 new MemberController와 같은 표현과 같다. 객체 생성후 필요한 시점에 주입 된다.
 public class MemberController {
 	//의존객체를 주입 받는다.
 	@Autowired

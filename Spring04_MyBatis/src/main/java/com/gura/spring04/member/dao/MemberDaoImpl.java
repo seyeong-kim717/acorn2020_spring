@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.gura.spring04.member.dto.MemberDto;
-
+// dao는 @Repository를 사용하여 만들어야 
 // dao 를 bean 으로 만들기 위한 어노테이션(spring 이 관리하는 객체를 만들기 위한 어노테이션) 
 @Repository
 public class MemberDaoImpl implements MemberDao{
@@ -72,9 +72,3 @@ public class MemberDaoImpl implements MemberDao{
 	}
 	
 }
-
-
-
-
-
-
