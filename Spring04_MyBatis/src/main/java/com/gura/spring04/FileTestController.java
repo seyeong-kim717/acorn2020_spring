@@ -88,9 +88,13 @@ public class FileTestController {
 		// /WEB-INF/views/upload2.jsp 페이지로 forward 이동해서 응답
 		return "upload2";
 	}
+<<<<<<< HEAD
 }
 
 
 
 
 
+=======
+}
+>>>>>>> refs/remotes/origin/irene

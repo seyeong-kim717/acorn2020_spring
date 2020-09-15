@@ -11,10 +11,17 @@
 <div class="container">
 	<h1>알림</h1>
 	<p class="alert alert-success">
+<<<<<<< HEAD
 		<strong>${id }</strong> 님이 업로드한 파일
 		<strong>${dto.orgFileName }</strong> 이(가) 성공적으로 저장되었습니다.
 		파일의 크기는 <strong>${dto.fileSize }</strong> byte 입니다.
 		<a class="alert-link" 
+=======
+		<strong>${id }</strong>님이 업로드한 파일
+		<strong>${dto.orgFileName }</strong>이 성공적으로 저장되었습니다.
+		파일의 크기는 <strong>${dto.fileSize }</strong>byte 입니다.
+		<a class="alert-link"
+>>>>>>> refs/remotes/origin/irene
 			href="${pageContext.request.contextPath }/file/list.do">목록보기</a>
 	</p>
 </div>

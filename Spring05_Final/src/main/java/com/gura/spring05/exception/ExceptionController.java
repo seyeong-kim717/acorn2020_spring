@@ -43,6 +43,7 @@ public class ExceptionController {
 		mView.setViewName("error/data_access");
 		return mView;
 	}
+<<<<<<< HEAD
 }
 
 
@@ -54,3 +55,6 @@ public class ExceptionController {
 
 
 
+=======
+}
+>>>>>>> refs/remotes/origin/irene

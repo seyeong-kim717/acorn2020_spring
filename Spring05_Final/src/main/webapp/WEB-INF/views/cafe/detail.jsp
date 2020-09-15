@@ -221,6 +221,7 @@
 			</c:forEach>
 		</ul>
 	</div><!-- /.comments -->
+<<<<<<< HEAD
 	<!-- 위에 float:left 에 영향을 받지 않게 하기 위해  -->
 	<div class="clearfix"></div>
 	
@@ -349,3 +350,128 @@
 
 
 
+=======
+	<!-- 원글에 댓글을 작성하는 form -->
+	<form class="comment-form insert-form" action="private/comment_insert.do" method="post">
+		<!-- 원글의 글번호가 ref_group 번호가 된다. -->
+		<input type="hidden" name="ref_group" value="${dto.num }"/>
+		<!-- 원글의 작성자가 댓글의 수신자가 된다. -->
+		<input type="hidden" name="target_id" value="${dto.writer }"/>
+		<textarea name="content"><c:if test="${empty id }">로그인이 필요합니다</c:if></textarea>
+		<button type="submit">등록</button>
+	</form>		
+	<!-- 위에 float:left 에 영향을 받지 않게 하기 위해  -->
+	<div class="clearfix"></div>
+	
+	<div class="page-display">
+		<ul class="pagination pagination-sm">
+		<c:if test="${startPageNum ne 1 }">
+			<li class="page-item"><a class="page-link" href="detail.do?num=${dto.num }&pageNum=${startPageNum-1 }">Prev</a></li>
+		</c:if>
+		<c:forEach var="i" begin="${startPageNum }" end="${endPageNum }">
+			<c:choose>
+				<c:when test="${i eq pageNum }">
+					<li class="page-item active"><a class="page-link" href="detail.do?num=${dto.num }&pageNum=${i }">${i }</a></li>
+				</c:when>
+				<c:otherwise>
+					<li class="page-item"><a class="page-link" href="detail.do?num=${dto.num }&pageNum=${i }">${i }</a></li>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${endPageNum lt totalPageCount }">
+			<li class="page-item"><a class="page-link" href="detail.do?num=${dto.num }&pageNum=${endPageNum+1 }">Next</a></li>
+		</c:if>
+		</ul>	
+	</div>	
+</div><!-- /.container -->
+<div class="loader">
+	<img src="${pageContext.request.contextPath }/resources/images/ajax-loader.gif"/>
+</div>
+<script src="${pageContext.request.contextPath }/resources/js/jquery-3.5.1.js"></script>
+<script src="${pageContext.request.contextPath }/resources/js/jquery.form.min.js"></script>
+<script>
+	//댓글 수정 링크를 눌렀을때 호출되는 함수 등록
+	$(document).on("click",".comment-update-link", function(){
+		/*
+			click 이벤트가 일어난 댓글 수정 링크에 저장된 data-num 속성의 값을 
+			읽어와서 id 선택자를 구성한다.
+		*/
+		var selector="#comment"+$(this).attr("data-num");
+		//구성된 id  선택자를 이용해서 원하는 li 요소에서 .update-form 을 찾아서 동작하기
+		$(selector)
+		.find(".update-form")
+		.slideToggle();
+	});
+	
+	$(document).on("submit", ".update-form", function(){
+		//이벤트가 일어난 폼을 ajax로 전송되도록 하고 
+		$(this).ajaxSubmit(function(data){
+			//console.log(data);
+			//수정이 일어난 댓글의 li 요소를 선택해서 원하는 작업을 한다.
+			var selector="#comment"+data.num; //"#comment6" 형식의 선택자 구성
+			
+			//댓글 수정 폼을 안보이게 한다. 
+			$(selector).find(".update-form").slideUp();
+			//pre 요소에 출력된 내용 수정하기
+			$(selector).find("pre").text(data.content);
+		});
+		//폼 전송을 막아준다.
+		return false;
+	});
+	
+	
+	$(document).on("click",".comment-delete-link", function(){
+		//삭제할 글번호 
+		var num=$(this).attr("data-num");
+		var isDelete=confirm("댓글을 삭제 하시겠습니까?");
+		if(isDelete){
+			location.href="${pageContext.request.contextPath }"+
+			"/cafe/private/comment_delete.do?num="+num+"&ref_group=${dto.num}";
+		}
+	});
+
+	//답글 달기 링크를 클릭했을때 실행할 함수 등록
+	$(document).on("click",".reply-link", function(){
+		//로그인 여부
+		var isLogin=${not empty id};
+		if(isLogin == false){
+			alert("로그인 페이지로 이동합니다.")
+			location.href="${pageContext.request.contextPath }/users/loginform.do?"+
+					"url=${pageContext.request.contextPath }/cafe/detail.do?num=${dto.num}";
+		}
+		
+		var selector="#comment"+$(this).attr("data-num");
+		$(selector)
+		.find(".re-insert-form")
+		.slideToggle();
+		
+		if($(this).text()=="답글"){//링크 text를 답글일때 클릭하면 
+			$(this).text("취소");//취소로 바꾸고 
+		}else{//취소일때 크릭하면 
+			$(this).text("답글");//답들로 바꾼다.
+		}	
+	});
+
+	$(document).on("submit",".insert-form", function(){
+		//로그인 여부
+		var isLogin=${not empty id};
+		if(isLogin == false){
+			alert("로그인 페이지로 이동합니다.")
+			location.href="${pageContext.request.contextPath }/users/loginform.do?"+
+					"url=${pageContext.request.contextPath }/cafe/detail.do?num=${dto.num}";
+			return false; //폼 전송 막기 		
+		}
+	});
+
+
+	function deleteConfirm(){
+		var isDelete=confirm("이 글을 삭제 하시겠습니까?");
+		if(isDelete){
+			location.href="delete.do?num=${dto.num}";
+		}
+	}
+
+</script>
+</body>
+</html>
+>>>>>>> refs/remotes/origin/irene

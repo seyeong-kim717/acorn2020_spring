@@ -26,6 +26,7 @@
 	</c:choose>
 </div>
 </body>
+<<<<<<< HEAD
 </html>
 
 
@@ -35,3 +36,6 @@
 
 
 
+=======
+</html>
+>>>>>>> refs/remotes/origin/irene

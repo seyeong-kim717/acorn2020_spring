@@ -10,7 +10,11 @@
 <h1>파일 업로드 결과</h1>
 <p>원본 파일명: <strong>${orgFileName }</strong></p>
 <p>저장된 파일명: <strong>${saveFileName }</strong></p>
+<<<<<<< HEAD
 <p>파일의 크기: <strong>${fileSize }</strong>byte</p>
+=======
+<p>파일의 크기 : <strong>${fileSize }</strong>byte</p>
+>>>>>>> refs/remotes/origin/irene
 <p>제목 : <strong>${title }</strong></p>
 </body>
 </html>

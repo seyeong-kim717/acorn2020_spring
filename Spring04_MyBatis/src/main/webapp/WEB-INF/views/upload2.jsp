@@ -10,9 +10,16 @@
 <h1>파일 업로드 결과</h1>
 <p>원본 파일명: <strong>${dto.orgFileName }</strong></p>
 <p>저장된 파일명: <strong>${dto.saveFileName }</strong></p>
+<<<<<<< HEAD
 <p>파일의 크기: <strong>${dto.fileSize }</strong>byte</p>
 <p>제목 : <strong>${dto.title }</strong></p>
 </body>
 </html>
 
 
+=======
+<p>파일의 크기 : <strong>${dto.fileSize }</strong>byte</p>
+<p>제목 : <strong>${dto.title }</strong></p>
+</body>
+</html>
+>>>>>>> refs/remotes/origin/irene

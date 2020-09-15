@@ -12,6 +12,7 @@
 		(id, pwd, email, regdate)
 		VALUES(#{id}, #{pwd}, #{email}, SYSDATE)
 	</insert>
+<<<<<<< HEAD
 	
 	<select id="getData" parameterType="string"
 		resultType="usersDto">
@@ -48,3 +49,28 @@
 
 
 
+=======
+	<select id="getData" parameterType="string"
+		resultType="usersDto">
+		SELECT id,pwd,email,profile,
+			To_CHAR(regdate, 'YY.MM.DD HH24"시"MM"분"' ) AS regdate	
+		FROM users
+		WHERE id=#{id}
+	</select>
+	<delete id="delete" parameterType="string">
+		DELETE FROM users
+		WHERE id=#{id}
+	</delete>
+	<update id="update" parameterType="usersDto">
+		UPDATE users
+		SET email=#{email}, profile=#{profile}
+		WHERE id=#{id}
+	</update>
+	
+	<update id="updatePwd" parameterType="usersDto">
+		UPDATE users
+		SET pwd=#{newPwd}
+		WHERE id=#{id}
+	</update>
+</mapper>
+>>>>>>> refs/remotes/origin/irene

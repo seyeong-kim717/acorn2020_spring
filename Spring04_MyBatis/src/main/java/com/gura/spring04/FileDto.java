@@ -65,8 +65,12 @@ public class FileDto {
 		this.myFile = myFile;
 	}
 	
+<<<<<<< HEAD
 }
 
 
 
 
+=======
+}
+>>>>>>> refs/remotes/origin/irene

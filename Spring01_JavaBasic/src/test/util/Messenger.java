@@ -12,4 +12,8 @@ public class Messenger {
 		System.out.println("getMessage() 메소드가 수행 됩니다.");
 		return "공부하자!";
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> refs/remotes/origin/irene

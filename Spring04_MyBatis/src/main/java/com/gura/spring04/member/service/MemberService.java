@@ -11,6 +11,7 @@ public interface MemberService {
 	public void getMember(int num, ModelAndView mView);
 	public void getListMember(ModelAndView mView);
 }
+<<<<<<< HEAD
 
 
 
@@ -18,3 +19,5 @@ public interface MemberService {
 
 
 
+=======
+>>>>>>> refs/remotes/origin/irene

@@ -52,6 +52,7 @@
 	<button ng-click="send2()">Ajax 전송(get)</button>
 	<p ng-bind="result2"></p>
 </body>
+<<<<<<< HEAD
 </html>
 
 
@@ -67,3 +68,6 @@
 
 
 
+=======
+</html>
+>>>>>>> refs/remotes/origin/irene

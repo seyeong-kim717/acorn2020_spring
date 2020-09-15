@@ -56,9 +56,13 @@ public class CafeDaoImpl implements CafeDao{
 		return session.selectOne("cafe.getData2", dto);
 	}
 	
+<<<<<<< HEAD
 }
 
 
 
 
 
+=======
+}
+>>>>>>> refs/remotes/origin/irene

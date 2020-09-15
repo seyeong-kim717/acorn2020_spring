@@ -15,6 +15,7 @@
 	<a href="../list.do">상품 목록보기</a>
 </div>
 </body>
+<<<<<<< HEAD
 </html>
 
 
@@ -23,3 +24,6 @@
 
 
 
+=======
+</html>
+>>>>>>> refs/remotes/origin/irene

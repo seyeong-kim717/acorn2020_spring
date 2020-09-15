@@ -20,6 +20,7 @@ public class MainClass02 {
 		// bean 이 리턴한 데이터 확인해 보기 
 		System.out.println("Messenger 객체가 리턴한 msg:"+msg);
 	}
+<<<<<<< HEAD
 }
 
 
@@ -30,3 +31,6 @@ public class MainClass02 {
 
 
 
+=======
+}
+>>>>>>> refs/remotes/origin/irene

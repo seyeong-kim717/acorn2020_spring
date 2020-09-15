@@ -40,7 +40,11 @@ public class ShopDaoImpl implements ShopDao{
 		return session.selectOne("shop.getPrice", num);
 	}
 
+<<<<<<< HEAD
 }
 
 
 
+=======
+}
+>>>>>>> refs/remotes/origin/irene

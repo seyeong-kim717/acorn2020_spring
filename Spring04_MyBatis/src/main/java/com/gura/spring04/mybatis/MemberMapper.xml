@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- configuration 에서 별칭을 사용하여서 parameterType에서 줄임 가능.  resultType="com.gura.spring04.member.dto.MemberDto" -->
 <mapper namespace="member">
 	<insert id="insert" 
 		parameterType="memberDto">

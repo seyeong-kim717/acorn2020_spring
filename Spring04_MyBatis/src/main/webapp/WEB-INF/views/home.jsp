@@ -28,6 +28,7 @@
 	
 	<h2>파일 업로드 테스트</h2>
 	<form action="upload.do" method="post" enctype="multipart/form-data">
+<<<<<<< HEAD
 		제목<input type="text" name="title"/><br/>
 		첨부파일<input type="file" name="myFile"/><br/>
 		<button type="submit">업로드</button>
@@ -36,6 +37,16 @@
 	<form action="upload2.do" method="post" enctype="multipart/form-data">
 		제목<input type="text" name="title"/><br/>
 		첨부파일<input type="file" name="myFile"/><br/>
+=======
+		제목<input type="text" name="title" /><br />
+		첨부파일<input type="file" name="myFile"/><br />
+		<button type="submit">업로드</button>
+	</form>
+		<h2>파일 업로드 테스트</h2>
+	<form action="upload2.do" method="post" enctype="multipart/form-data">
+		제목<input type="text" name="title" /><br />
+		첨부파일<input type="file" name="myFile"/><br />
+>>>>>>> refs/remotes/origin/irene
 		<button type="submit">업로드</button>
 	</form>
 </div>
@@ -43,7 +54,11 @@
 <script>
 	$("#testBtn").on("click", function(){
 		$.ajax({
+<<<<<<< HEAD
 			url:"json06.do",
+=======
+			url:"json02.do",
+>>>>>>> refs/remotes/origin/irene
 			method:"GET",
 			success:function(data){
 				//data 는 plain object or array 이다.
@@ -54,8 +69,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-

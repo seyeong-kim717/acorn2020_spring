@@ -28,6 +28,7 @@ public class ShopController {
 		mView.setViewName("shop/buy");
 		return mView;
 	}
+<<<<<<< HEAD
 }
 
 
@@ -43,3 +44,6 @@ public class ShopController {
 
 
 
+=======
+}
+>>>>>>> refs/remotes/origin/irene

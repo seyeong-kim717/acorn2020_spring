@@ -93,6 +93,7 @@
 		SET title=#{title}, content=#{content}
 		WHERE num=#{num}
 	</update>	
+<<<<<<< HEAD
 </mapper>
 
 
@@ -106,3 +107,6 @@
 
 
 
+=======
+</mapper>
+>>>>>>> refs/remotes/origin/irene

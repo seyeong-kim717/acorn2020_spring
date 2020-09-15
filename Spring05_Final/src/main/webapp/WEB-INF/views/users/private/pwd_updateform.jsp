@@ -23,7 +23,11 @@
 			<label for="newPwd2">새 비밀번호 확인</label>
 			<input class="form-control" type="password" name="newPwd2" id="newPwd2"/>
 		</div>
+<<<<<<< HEAD
 		<button class="btn btn-outline-primary" type="submit">수정하기</button>
+=======
+		<button class="btn btn-primary" type="submit">수정하기</button>
+>>>>>>> refs/remotes/origin/irene
 	</form>
 </div>
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.5.1.js"></script>

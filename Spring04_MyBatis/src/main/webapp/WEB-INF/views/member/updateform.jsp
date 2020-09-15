@@ -19,6 +19,7 @@
 		<div class="form-group">
 			<label for="name">이름</label>
 			<input type="text" id="name" name="name" class="form-control"
+<<<<<<< HEAD
 				value="${dto.name }"/>
 		</div>
 		<div class="form-group">
@@ -37,3 +38,18 @@
 
 
 
+=======
+				value="${dto.name }" />
+		</div>
+		<div class="form-group">
+			<label for="addr">주소</label>
+			<input type="text" id="addr" name="addr" class="form-control" 
+				value="${dto.addr }"/>
+		</div>
+		<button type="submit" class="btn btn-primary">수정 확인</button>
+		<button type="submit" class="btn btn-warning">취소</button>
+	</form>
+</div>
+</body>
+</html>
+>>>>>>> refs/remotes/origin/irene

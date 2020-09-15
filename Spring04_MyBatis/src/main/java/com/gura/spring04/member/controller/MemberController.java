@@ -1,5 +1,7 @@
 package com.gura.spring04.member.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -7,10 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+<<<<<<< HEAD
+=======
+
+import com.gura.spring04.member.dao.MemberDao;
+>>>>>>> refs/remotes/origin/irene
 import com.gura.spring04.member.dto.MemberDto;
 import com.gura.spring04.member.service.MemberService;
 
 @Controller
+//controller를 생성함은 new MemberController와 같은 표현과 같다. 객체 생성후 필요한 시점에 주입 된다.
 public class MemberController {
 	//의존객체를 주입 받는다.
 	@Autowired
@@ -31,6 +39,7 @@ public class MemberController {
 			method = RequestMethod.GET)
 	public ModelAndView updateform(@RequestParam int num,
 			ModelAndView mView) {
+<<<<<<< HEAD
 		
 		service.getMember(num, mView);
 		
@@ -71,6 +80,47 @@ public class MemberController {
 	public ModelAndView list(ModelAndView mView) {
 		
 		service.getListMember(mView);
+=======
+			
+		service.getMember(num, mView);
+		
+		//view 페이지 정보를 ModelAndView 객체에 담는다.
+		mView.setViewName("member/updateform");
+		//ModelAndView 객체를 리턴해준다.
+		return mView;
+	}
+	
+	//회원 삭제 요청 처리
+	@RequestMapping("/member/delete")
+	public String delete(@RequestParam int num) {
+		service.deleteMember(num);
+		//리다일렉트 응답
+		return "redirect:/member/list.do";
+	}
+	
+	//회원 추가 요청처리
+	@RequestMapping("/member/insert")
+	public String insert(@ModelAttribute MemberDto dto) {
+		//회원 정보를 DB 에 저장하고
+		service.addMember(dto);
+		//view page 로 forward 이동해서 응답
+		return "member/insert";
+	}
+	
+	//회원추가 폼 요청 처리
+	@RequestMapping("/member/insertform")
+	public String insertform() {
+		//수행할 비즈니스 로직은 현재 없다.
+		
+		return "member/insertform";
+	}
+	
+	@RequestMapping("/member/list")
+	public ModelAndView list(ModelAndView mView) {
+
+		service.getListMember(mView);
+		
+>>>>>>> refs/remotes/origin/irene
 		//view 페이지 정보를 담고 
 		mView.setViewName("member/list");
 		//ModelAndView 객체를 리턴해 준다.
@@ -78,7 +128,5 @@ public class MemberController {
 	}
 }
 
-
-
-
-
+//비즈니스로직은 서비스에서 처리
+//컨트롤러는 어떤요청에 대해 어떻게 처리하고 이동하는지 알려주는것 컨트롤러의 코딩 양은 많아지면 좋지 않다.

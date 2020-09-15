@@ -23,8 +23,13 @@
 		</div>
 		<div class="form-group">
 			<label for="myFile">첨부 파일</label>
+<<<<<<< HEAD
 			<input class="form-control" type="file" name="myFile" id="myFile"/>
 		</div>
+=======
+			<input class="form-group" type="file" name="myFile" id="myFile"/>
+		</div><!-- multipartfile type으로 받는다. -->
+>>>>>>> refs/remotes/origin/irene
 		<button class="btn btn-outline-primary"  type="submit">업로드</button>
 	</form>
 </div>

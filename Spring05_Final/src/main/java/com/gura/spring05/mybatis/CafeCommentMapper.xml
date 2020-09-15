@@ -45,6 +45,7 @@
 		FROM board_cafe_comment
 		WHERE ref_group=#{ref_group}
 	</select>
+<<<<<<< HEAD
 </mapper>
 
 
@@ -53,3 +54,6 @@
 
 
 
+=======
+</mapper>
+>>>>>>> refs/remotes/origin/irene

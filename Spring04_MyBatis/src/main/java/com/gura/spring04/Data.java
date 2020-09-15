@@ -7,7 +7,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Data {
 	private int num;
 	private String name;
+<<<<<<< HEAD
 	
+=======
+>>>>>>> refs/remotes/origin/irene
 	public int getNum() {
 		return num;
 	}

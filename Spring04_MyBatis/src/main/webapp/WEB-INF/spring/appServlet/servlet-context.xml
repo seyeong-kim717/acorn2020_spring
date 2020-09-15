@@ -83,9 +83,13 @@
 		<beans:property name="maxUploadSize" value="102400000"/>
 	</beans:bean>
 	
+<<<<<<< HEAD
 </beans:beans>
 
 
 
 
 
+=======
+</beans:beans>
+>>>>>>> refs/remotes/origin/irene

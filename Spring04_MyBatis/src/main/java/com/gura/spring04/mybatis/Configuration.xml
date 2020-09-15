@@ -3,6 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+		<typeAliases>
+		<typeAlias type="com.gura.spring04.member.dto.MemberDto" alias="memberDto"/>
+		<typeAlias type="com.gura.spring04.todo.dto.TodoDto" alias="todoDto"/>
+	</typeAliases>
 	
 	<typeAliases>
 		<typeAlias type="com.gura.spring04.member.dto.MemberDto" alias="memberDto"/>
@@ -11,6 +15,9 @@
 	<!-- 사용할 Mapper 목록 설정  -->
 	<mappers>
 		<mapper resource="com/gura/spring04/mybatis/MemberMapper.xml"/>
+<<<<<<< HEAD
+=======
+		<mapper resource="com/gura/spring04/mybatis/TodoMapper.xml"/>
+>>>>>>> refs/remotes/origin/irene
 	</mappers>
-	
 </configuration>

@@ -32,6 +32,7 @@ public class UsersDaoImpl implements UsersDao{
 	public void insert(UsersDto dto) {
 		session.insert("users.insert", dto);
 	}
+<<<<<<< HEAD
 	
 	//인자로 전달되는 id 에 해당되는 사용자 정보를 리턴하는 메소드 
 	@Override
@@ -65,3 +66,32 @@ public class UsersDaoImpl implements UsersDao{
 
 
 
+=======
+
+	//인자로 전다로디는 id에 해당하는 사용자 정보를 리턴한느 메소드
+	@Override
+	public UsersDto getData(String id) {
+		UsersDto dto=session.selectOne("users.getData", id);
+		return dto;
+	}
+
+	@Override
+	public void delete(String id) {
+		session.delete("users.delete", id);
+		
+	}
+
+	@Override
+	public void update(UsersDto dto) {
+		session.update("users.update", dto);
+		
+	}
+
+	@Override
+	public void updatePwd(UsersDto dto) {
+		//update문의 영향을 받은 row의 갯수가 리턴된다.
+		session.update("users.updatePwd", dto);
+	}
+	
+}
+>>>>>>> refs/remotes/origin/irene

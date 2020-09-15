@@ -13,6 +13,7 @@ public class HobbyList {
 	public void setHobby(List<String> hobby) {
 		this.hobby = hobby;
 	}
+<<<<<<< HEAD
 	public List<String> getHobby() {
 		return hobby;
 	}
@@ -24,3 +25,10 @@ public class HobbyList {
 
 
 
+=======
+	
+	public List<String> getHobby() {
+		return hobby;
+	}
+}
+>>>>>>> refs/remotes/origin/irene
