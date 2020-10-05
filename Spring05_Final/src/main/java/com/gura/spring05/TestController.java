@@ -20,6 +20,13 @@ public class TestController {
 	@Autowired
 	private UsersService usersService;
 	
+	@RequestMapping("/react/send")
+	@ResponseBody
+	public Map<String, Object> sendMessage(String msg){
+		System.out.println(msg);
+		return null;
+	}
+	
 	@RequestMapping("/api/jsonp_login")
 	@ResponseBody
 	public JSONPObject jsonpLogin(String callback, UsersDto dto) {
