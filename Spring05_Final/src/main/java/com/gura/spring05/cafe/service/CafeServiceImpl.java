@@ -329,12 +329,12 @@ public class CafeServiceImpl implements CafeService{
 		}
 		//인코딩된 키워드를 미리 만들어 둔다. 
 		String encodedK=URLEncoder.encode(keyword);
-				
+		
 		//검색 키워드와 startRowNum, endRowNum 을 담을 FileDto 객체 생성
 		CafeDto dto=new CafeDto();
 		dto.setStartRowNum(startRowNum);
 		dto.setEndRowNum(endRowNum);
-				
+		
 		if(!keyword.equals("")){ //만일 키워드가 넘어온다면 
 			if(condition.equals("title_content")){
 				//검색 키워드를 FileDto 객체의 필드에 담는다. 
@@ -350,7 +350,7 @@ public class CafeServiceImpl implements CafeService{
 		List<CafeDto> list=cafeDao.getList(dto);
 		//전체 row 의 갯수 
 		int totalRow=cafeDao.getCount(dto);
-				
+		
 		//전체 페이지의 갯수 구하기
 		int totalPageCount=
 				(int)Math.ceil(totalRow/(double)PAGE_ROW_COUNT);
@@ -363,36 +363,28 @@ public class CafeServiceImpl implements CafeService{
 		if(totalPageCount < endPageNum){
 			endPageNum=totalPageCount; //보정해준다. 
 		}
-				
+		
 		//EL 에서 사용할 값을 미리 request 에 담아두기
 		request.setAttribute("list", list);
 		request.setAttribute("startPageNum", startPageNum);
 		request.setAttribute("endPageNum", endPageNum);
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("totalPageCount", totalPageCount);
-		request.setAttribute("condition", condition);
-		request.setAttribute("keyword", keyword);
-		request.setAttribute("encodedK", encodedK);				
 		
 		//글목록과 페이징 처리에 관련된 값을 담을 Map 객체 생성
 		Map<String, Object> map=new HashMap<>();
+		//글목록을 전체 Map 에 담아준다. 
 		map.put("list", list);
 		
+		//페이징 처리에 필요한 값을 Map 에 담아서 
 		Map<String, Integer> paging=new HashMap<>();
 		paging.put("startPageNum", startPageNum);
 		paging.put("endPageNum", endPageNum);
 		paging.put("pageNum", pageNum);
 		paging.put("totalPageCount", totalPageCount);
-		//전체  Map에 담아준다.
+		//전체 Map 에 담아준다. 
 		map.put("paging", paging);
 		return map;
 	}
 	
 }
-
-
-
-
-
-
-
